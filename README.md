@@ -1,3 +1,7 @@
+# Demo
+
+Preview the app [here](https://munevarm.dev.fast.sheridanc.on.ca/SYST24444/assignment4/)
+
 # MyWeatherApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.

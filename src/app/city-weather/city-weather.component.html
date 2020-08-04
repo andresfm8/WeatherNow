@@ -1,0 +1,41 @@
+<div class="container">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
+        <div class="input-group mb-3 w-50 mx-auto">
+            <input type="text" class="form-control border-secondary" placeholder="Search city..." 
+                    aria-label="Search city..." aria-describedby="button-addon2"
+                    formControlName="cityName"
+                    >
+            <div class="input-group-append">
+            <button class="btn btn-outline-dark" id="button-addon2">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<ng-template [ngIf]="cityExists" >
+    <table class="table-sm table-hover w-50 mx-auto">
+        <thead>
+            <tr>
+                <th colspan="3">Location: {{ weatherApi.name }}, {{ weatherApi.sys.country }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-info">
+                <td>Temperature: {{ weatherApi.main.temp }}&deg;C</td>
+                <td>Min: {{ weatherApi.main.temp_min }}&deg;C</td>
+                <td>Max: {{ weatherApi.main.temp_max }}&deg;C</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Latitud: {{ weatherApi.coord.lat }}</td>
+                <td>Longitud: {{ weatherApi.coord.lon }}</td>
+            </tr>
+        </tbody>
+      </table>
+</ng-template>
+
+<div class="alert alert-danger w-25 mx-auto" role="alert" [hidden]="!errorExist">
+    {{ errorMsg }}
+</div>   
+
+

@@ -30,7 +30,7 @@ export class CityWeatherComponent implements OnInit {
   //Pull the weather data of an specific city from the API 
   getData(cityName: String){
     let url = "https://api.openweathermap.org/data/2.5/weather?q=" 
-              + cityName + "&appid=af26e4a70cbde819abfc5d8662b3094d&units=metric";
+              + cityName + "&appid=YOURAPIKEY&units=metric";
     let obs = this.http.get<String>(url);
     this.validateSearch(obs);
   }
